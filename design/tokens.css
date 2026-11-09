@@ -1,0 +1,112 @@
+/* The Daily Ledger design tokens.
+   Single source of truth for colour, type, spacing, rules and motion.
+   Components must use these variables. No hardcoded colours, fonts or spacing.
+   Load the Google Fonts in the app's font-loading layer (next/font).
+
+   Contrast (measured, WCAG):
+   - ink on paper 9.0:1, ink-soft on paper 4.9:1
+   - accent-text on paper 5.1:1
+   - accent (#b93c11) on paper is only 3.0:1: use it for fills, badges and large type, never small text
+   - paper-bright on accent 4.9:1, on card-forest 6.7:1, on card-charcoal 11:1
+   - paper-bright on card-blue-deep is 3.7:1: large text only
+   - ink on card-blue, card-mustard and card-sage is 8:1 or better
+*/
+:root {
+  /* Paper and ink */
+  --paper: #c3bbb2;
+  --paper-light: #e6dfd2;
+  --paper-bright: #f4efe4;
+  --paper-deep: #b3aba1;
+  --ink: #1c1c19;
+  --ink-soft: #4a4640;
+  --rule: #706c66;
+  --rule-light: rgba(28, 28, 25, 0.25);
+
+  /* Brand accent: one bold colour, used sparingly */
+  --accent: #b93c11;
+  --accent-text: #7d2709;
+  --accent-light: #eb7143;
+  --accent-tint: #e8c2b4;
+
+  /* Story-card colour fields: occasional, never every card */
+  --card-blue: #afc8d8;
+  --card-blue-deep: #587f9b;
+  --card-mustard: #d9b83f;
+  --card-sage: #aab69a;
+  --card-forest: #40594a;
+  --card-charcoal: #292927;
+
+  /* Typography (four families) */
+  --font-masthead: "UnifrakturCook", "Old English Text MT", serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-label: "DM Sans", Arial, sans-serif;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-display: clamp(2.75rem, 7vw, 6.5rem);
+  --text-masthead: clamp(3rem, 11vw, 9rem);
+  --leading-body: 1.6;
+  --tracking-display: -0.02em;
+  --tracking-label: 0.09em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Layout */
+  --page-gutter: clamp(1rem, 3vw, 3rem);
+  --content-max: 1440px;
+  --column-gap: clamp(1rem, 2vw, 2rem);
+  --measure: 62ch;
+
+  /* Rules and borders */
+  --rule-thin: 1px solid var(--rule);
+  --rule-thick: 3px solid var(--ink);
+  --rule-double: 4px double var(--ink);
+
+  /* Texture */
+  --grain-opacity: 0.08;
+
+  /* Motion (nothing longer than 400ms) */
+  --motion-fast: 140ms ease;
+  --motion-standard: 220ms ease;
+  --motion-slow: 400ms ease;
+}
+
+.theme-ledger {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+  line-height: var(--leading-body);
+}
+
+.ledger-label {
+  color: var(--ink-soft);
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
