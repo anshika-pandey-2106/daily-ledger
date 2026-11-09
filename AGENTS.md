@@ -21,8 +21,7 @@ The Daily Ledger: personalised finance news presented as a vintage-style newspap
 `/web` app, `/pipeline` Python jobs, `/db` migrations, `/design` tokens and references, `/docs` specs, `/scripts` helpers.
 
 ## Commands
-Add the exact commands here once the project is scaffolded (task 0.1):
-- web: `npm run dev`, `npm test`, `npm run lint`, `npm run screenshots`
+- Web commands (run from `/web`): `npm run dev`, `npm run lint`, `npm test`, `npm run screenshots`
 - pipeline: `pytest`, `ruff check`
 The development machine runs Windows (PowerShell). Prefer cross-platform scripts.
 

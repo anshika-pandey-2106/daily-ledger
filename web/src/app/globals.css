@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "../../../design/tokens.css";
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-light: var(--paper-light);
+  --color-paper-bright: var(--paper-bright);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-rule: var(--rule);
+  --color-rule-light: var(--rule-light);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-light: var(--accent-light);
+  --color-accent-tint: var(--accent-tint);
+  --color-card-blue: var(--card-blue);
+  --color-card-blue-deep: var(--card-blue-deep);
+  --color-card-mustard: var(--card-mustard);
+  --color-card-sage: var(--card-sage);
+  --color-card-forest: var(--card-forest);
+  --color-card-charcoal: var(--card-charcoal);
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-7: var(--space-7);
+  --spacing-8: var(--space-8);
+  --font-ledger-masthead: var(--font-masthead);
+  --font-ledger-display: var(--font-display);
+  --font-ledger-body: var(--font-body);
+  --font-ledger-label: var(--font-label);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --font-masthead: var(--loaded-font-masthead), "Old English Text MT", serif;
+  --font-display: var(--loaded-font-display), Georgia, serif;
+  --font-body: var(--loaded-font-body), Georgia, serif;
+  --font-label: var(--loaded-font-label), Arial, sans-serif;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: var(--leading-body);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: var(--rule-thick);
+  outline-offset: var(--space-1);
+}
