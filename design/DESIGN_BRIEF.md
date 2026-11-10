@@ -12,19 +12,28 @@ Informed, calm, curious, confident. A little wit, never gimmicky. A curated dail
 1. **Typography is the identity.** The masthead and headlines do most of the visual work.
 2. **Paper is the canvas.** Warm paper tone with very subtle grain. No heavy distressed textures.
 3. **Rules create structure.** Thin hairline rules, vertical column rules, occasional double rules.
-4. **One bold accent.** A burnt-orange brand accent for labels, badges and small highlights. Muted colour fields appear on selected story cards only.
+4. **A restrained editorial palette.** Cream remains the page canvas. Deep navy carries structure and key surfaces; signature raspberry marks a few memorable moments; butter adds warmth to selected cards, annotations and illustrations. Muted tints support the three core hues. Never use raspberry as a dominant page background, and use its darker ink token for small text.
 5. **Cards feel curated.** Four consistent variants, never a grid of identical tiles.
 6. **Whitespace is intentional.** Dense newspaper content should still feel calm.
 7. **Mobile is first-class.**
 
-## 4. Typography (four families)
-- **Masthead:** UnifrakturCook (blackletter). Masthead and a few ornamental uses only, never body text or long headlines.
-- **Headlines:** Playfair Display, bold, tight tracking, often uppercase for section titles. This is the free stand-in for Canopée, the condensed display face used on the main reference site.
-- **Body:** Source Serif 4, 17 to 18px, line-height about 1.6. Margin notes use its italic.
-- **Labels and metadata:** DM Sans, uppercase with moderate letter spacing, for dates, categories, reading time and buttons.
+## 4. Typography (five editorial roles)
+- **Masthead:** UnifrakturCook (blackletter). Preserve its current size and appearance; use only for the publication masthead and rare ornaments.
+- **Main headlines:** Fraunces, bold with tight tracking. Use for lead and story-card headlines, articles, related stories and major section titles.
+- **Long-form reading:** Special Elite for complete article body paragraphs and typewriter-style reading content. Keep it comfortably sized (about 18 to 20px) with generous leading (about 1.7); widen the reading measure rather than shrinking it to fit.
+- **Supporting editorial copy:** Literata for article summaries, decks, descriptions, captions, source notes, footer copy, and yellow margin-note titles and explanations.
+- **Navigation and metadata:** DM Sans for navigation, dates, categories, reading time, labels and controls.
+
+The font roles are exposed as `--font-masthead`, `--font-display`, `--font-body`, `--font-support` and `--font-label` in `design/tokens.css`. Fraunces, Special Elite and Literata are loaded from Google Fonts through `next/font/google` and self-hosted by Next.js; UnifrakturCook and DM Sans remain locally bundled. Do not load Playfair Display or Source Serif 4 in the active product UI.
 
 ## 5. Colour
-All values are in `tokens.css`. Paper `--paper`, ink `--ink`, hairline `--rule`, brand accent `--accent`. Card colour fields: blue, mustard, sage, forest, charcoal. Accent on paper is below AA for small text, so use `--accent-text` for small accent text and `--accent` for fills and large type.
+The approved digital palette lives in `design/tokens.css` and is exposed through semantic roles:
+- **Page and text:** `--background-page` (existing cream `--paper`), `--background-surface` (bright paper), `--background-muted` (muted paper), `--text-primary` (near-black ink), `--text-secondary` and `--text-inverse`.
+- **Editorial hues:** deep navy `--editorial-navy` (`#19334D`), signature raspberry `--raspberry` (`#E30B5D`), and butter `--butter` (`#F2D77B`). Their semantic roles are `--accent-structural`, `--accent-signature` and `--accent-warm`.
+- **Highlights and surfaces:** use `--highlight-background` / `--highlight-foreground`, and the `--surface-*` tokens for paper, navy, raspberry and butter editorial surfaces. Their muted variants are for gentle colour fields.
+- **Borders:** `--border-default`, `--border-strong` and `--border-structural` keep rules coordinated with ink and navy.
+
+Cream remains dominant. Navy provides the main structure and may support a selected high-contrast story surface. Raspberry is a selective accent, never a dominant page field; the bright hue is for large display or decorative marks while `--raspberry-ink` / `--text-accent` is used for small text. Butter and its tint are reserved for occasional annotations, story fields and original illustrations. Preserve the existing near-black ink, cream papers and neutral rule values. Do not spread new raw colour values through component styles.
 
 ## 6. Front page composition
 Follows the PRD (section 6.2):
@@ -73,3 +82,5 @@ Headline, deck, "Reported by [source]" with a link to the original, body with dr
 4. Article reading mockup.
 5. Onboarding topic grid mockup.
 6. Screenshot review against `REFERENCES.md`.
+
+The approved visual-direction study at `/mockup/visual-direction` demonstrates the palette. The comparison at `/mockup/typography` records the selected type hierarchy. Preserve the newspaper grid and blackletter masthead.

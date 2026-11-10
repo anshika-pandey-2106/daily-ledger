@@ -15,6 +15,37 @@ const colourTokens = [
   ["--ink-soft", "Ink soft"],
   ["--rule", "Rule"],
   ["--rule-light", "Rule light"],
+  ["--editorial-navy", "Editorial navy"],
+  ["--raspberry", "Signature raspberry"],
+  ["--raspberry-ink", "Raspberry ink"],
+  ["--butter", "Butter"],
+  ["--navy-wash", "Navy wash"],
+  ["--raspberry-wash", "Raspberry wash"],
+  ["--butter-wash", "Butter wash"],
+  ["--background-page", "Page background"],
+  ["--background-surface", "Surface background"],
+  ["--background-muted", "Muted background"],
+  ["--background-editorial", "Editorial background"],
+  ["--text-primary", "Primary text"],
+  ["--text-secondary", "Secondary text"],
+  ["--text-inverse", "Inverse text"],
+  ["--text-accent", "Small accent text"],
+  ["--text-display-accent", "Display accent"],
+  ["--accent-structural", "Structural accent"],
+  ["--accent-signature", "Signature accent"],
+  ["--accent-warm", "Warm accent"],
+  ["--highlight-background", "Highlight background"],
+  ["--highlight-foreground", "Highlight text"],
+  ["--border-default", "Default border"],
+  ["--border-strong", "Strong border"],
+  ["--border-structural", "Structural border"],
+  ["--surface-paper", "Paper surface"],
+  ["--surface-paper-muted", "Muted paper surface"],
+  ["--surface-navy", "Navy surface"],
+  ["--surface-navy-muted", "Muted navy surface"],
+  ["--surface-raspberry-muted", "Muted raspberry surface"],
+  ["--surface-butter", "Butter surface"],
+  ["--surface-butter-muted", "Muted butter surface"],
   ["--accent", "Accent"],
   ["--accent-text", "Accent text"],
   ["--accent-light", "Accent light"],
@@ -29,8 +60,9 @@ const colourTokens = [
 
 const fontRoles = [
   ["Masthead", "--font-masthead", "UnifrakturCook", "Blackletter · ornamental use"],
-  ["Headlines", "--font-display", "Playfair Display", "Serif · display and section headings"],
-  ["Body", "--font-body", "Source Serif 4", "Serif · reading text"],
+  ["Headlines", "--font-display", "Fraunces", "Serif · features and section titles"],
+  ["Article body", "--font-body", "Special Elite", "Typewriter · complete long-form reading"],
+  ["Supporting editorial", "--font-support", "Literata", "Serif · notes, summaries and captions"],
   ["Labels and metadata", "--font-label", "DM Sans", "Sans serif · labels and controls"],
 ] as const;
 
@@ -65,8 +97,10 @@ const typeScaleTokens = [
   ["--text-lg", "1.25rem"],
   ["--text-xl", "1.5rem"],
   ["--text-2xl", "clamp(1.75rem, 3vw, 2.5rem)"],
+  ["--text-article-headline", "clamp(2.75rem, 5.25vw, 5.25rem)"],
   ["--text-display", "clamp(2.75rem, 7vw, 6.5rem)"],
   ["--text-masthead", "clamp(3rem, 11vw, 9rem)"],
+  ["--text-reading", "clamp(1.125rem, 1.2vw + 0.8rem, 1.25rem)"],
 ] as const;
 
 function SectionHeading({ number, children }: { number: string; children: React.ReactNode }) {
@@ -125,7 +159,7 @@ export default function TokensPage() {
             <article className="type-specimen" key={token}>
               <p className="ledger-label">{role} · {token}</p>
               <p className={`font-sample sample-${family.toLowerCase().replaceAll(" ", "-")}`}>
-                {role === "Masthead" ? "The Daily Ledger" : role === "Headlines" ? "A clear line of thought" : role === "Body" ? "Good type lets a reader settle in and follow the story without strain." : "EDITION · SECTION · 4 MIN READ"}
+                {role === "Masthead" ? "The Daily Ledger" : role === "Headlines" ? "A clear line of thought" : role === "Article body" || role === "Supporting editorial" ? "Good type lets a reader settle in and follow the story without strain." : "EDITION · SECTION · 4 MIN READ"}
               </p>
               <p className="specimen-note">{family} — {description}</p>
             </article>
@@ -141,6 +175,7 @@ export default function TokensPage() {
         </div>
         <div className="type-notes">
           <span><code>--leading-body</code><b>1.6</b></span>
+          <span><code>--leading-reading</code><b>1.72</b></span>
           <span><code>--tracking-display</code><b>−0.02em</b></span>
           <span><code>--tracking-label</code><b>0.09em</b></span>
         </div>

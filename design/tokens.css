@@ -1,15 +1,12 @@
 /* The Daily Ledger design tokens.
    Single source of truth for colour, type, spacing, rules and motion.
    Components must use these variables. No hardcoded colours, fonts or spacing.
-   Load the Google Fonts in the app's font-loading layer (next/font).
+   Font files are bundled locally and loaded in the app's font-loading layer.
 
-   Contrast (measured, WCAG):
-   - ink on paper 15.0:1, ink-soft on paper 8.2:1
-   - accent-text on paper 8.5:1
-   - accent (#b93c11) on paper is 5.0:1: use it for fills, badges and large type
-   - paper-bright on accent 5.3:1, on card-forest 7.2:1, on card-charcoal 13.7:1
-   - paper-bright on card-blue-deep is 4.0:1: large text only
-   - ink on card-blue, card-mustard and card-sage is 8:1 or better
+   Contrast guidance (WCAG):
+   - ink on paper and navy on paper exceed AA for normal text.
+   - raspberry-ink is used for small accent text; signature raspberry is large/decorative only.
+   - ink on butter and paper-bright on navy exceed AA for normal text.
 */
 :root {
   /* Paper and ink */
@@ -22,24 +19,59 @@
   --rule: #706c66;
   --rule-light: rgba(28, 28, 25, 0.25);
 
-  /* Brand accent: one bold colour, used sparingly */
-  --accent: #b93c11;
-  --accent-text: #7d2709;
-  --accent-light: #eb7143;
-  --accent-tint: #e8c2b4;
+  /* Approved editorial palette */
+  --editorial-navy: #19334d;
+  --raspberry: #e30b5d;
+  --raspberry-ink: #9d1145;
+  --butter: #f2d77b;
+  --navy-wash: color-mix(in srgb, var(--editorial-navy) 10%, var(--paper-bright));
+  --raspberry-wash: color-mix(in srgb, var(--raspberry) 9%, var(--paper-bright));
+  --butter-wash: color-mix(in srgb, var(--butter) 38%, var(--paper-bright));
 
-  /* Story-card colour fields: occasional, never every card */
-  --card-blue: #afc8d8;
-  --card-blue-deep: #587f9b;
-  --card-mustard: #d9b83f;
-  --card-sage: #aab69a;
-  --card-forest: #40594a;
+  /* Semantic colour roles */
+  --background-page: var(--paper);
+  --background-surface: var(--paper-bright);
+  --background-muted: var(--paper-light);
+  --background-editorial: var(--editorial-navy);
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-inverse: var(--paper-bright);
+  --text-accent: var(--raspberry-ink);
+  --text-display-accent: var(--raspberry);
+  --accent-structural: var(--editorial-navy);
+  --accent-signature: var(--raspberry);
+  --accent-warm: var(--butter);
+  --highlight-background: var(--butter-wash);
+  --highlight-foreground: var(--ink);
+  --border-default: var(--rule);
+  --border-strong: var(--ink);
+  --border-structural: var(--editorial-navy);
+  --surface-page: var(--paper);
+  --surface-paper: var(--paper-bright);
+  --surface-paper-muted: var(--paper-light);
+  --surface-navy: var(--editorial-navy);
+  --surface-navy-muted: var(--navy-wash);
+  --surface-raspberry-muted: var(--raspberry-wash);
+  --surface-butter: var(--butter);
+  --surface-butter-muted: var(--butter-wash);
+
+  /* Compatibility names retained for the current editorial components */
+  --accent: var(--raspberry);
+  --accent-text: var(--raspberry-ink);
+  --accent-light: color-mix(in srgb, var(--raspberry) 78%, var(--paper-bright));
+  --accent-tint: var(--raspberry-wash);
+  --card-blue: var(--navy-wash);
+  --card-blue-deep: var(--editorial-navy);
+  --card-mustard: var(--butter);
+  --card-sage: var(--butter-wash);
+  --card-forest: var(--editorial-navy);
   --card-charcoal: #292927;
 
-  /* Typography (four families) */
+  /* Typography (five editorial roles) */
   --font-masthead: "UnifrakturCook", "Old English Text MT", serif;
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "Source Serif 4", Georgia, serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Special Elite", "Courier New", monospace;
+  --font-support: "Literata", Georgia, serif;
   --font-label: "DM Sans", Arial, sans-serif;
 
   /* Type scale */
@@ -49,9 +81,12 @@
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-2xl: clamp(1.75rem, 3vw, 2.5rem);
+  --text-article-headline: clamp(2.75rem, 5.25vw, 5.25rem);
   --text-display: clamp(2.75rem, 7vw, 6.5rem);
   --text-masthead: clamp(3rem, 11vw, 9rem);
   --leading-body: 1.6;
+  --leading-reading: 1.72;
+  --text-reading: clamp(1.125rem, 1.2vw + 0.8rem, 1.25rem);
   --tracking-display: -0.02em;
   --tracking-label: 0.09em;
 

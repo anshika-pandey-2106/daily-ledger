@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Fraunces, Literata, Special_Elite } from "next/font/google";
 import "./globals.css";
 
 const mastheadFont = localFont({
@@ -9,17 +10,22 @@ const mastheadFont = localFont({
   display: "swap",
 });
 
-const displayFont = localFont({
-  src: "./fonts/PlayfairDisplay-variable.ttf",
-  weight: "400 900",
+const displayFont = Fraunces({
+  subsets: ["latin"],
   variable: "--loaded-font-display",
   display: "swap",
 });
 
-const bodyFont = localFont({
-  src: "./fonts/SourceSerif4-variable.ttf",
-  weight: "200 900",
+const bodyFont = Special_Elite({
+  weight: "400",
+  subsets: ["latin"],
   variable: "--loaded-font-body",
+  display: "swap",
+});
+
+const supportFont = Literata({
+  subsets: ["latin"],
+  variable: "--loaded-font-support",
   display: "swap",
 });
 
@@ -44,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mastheadFont.variable} ${displayFont.variable} ${bodyFont.variable} ${labelFont.variable}`}
+        className={`${mastheadFont.variable} ${displayFont.variable} ${bodyFont.variable} ${supportFont.variable} ${labelFont.variable}`}
       >
         {children}
       </body>

@@ -163,10 +163,10 @@ function EditionFooter() {
         <p className="ledger-label">The Daily Ledger · A sample edition</p>
         <p className="footer-large">Read the numbers<br />with a little more context.</p>
       </div>
-      <div className="footer-bottom ledger-label">
-        <span>Illustrative content · no live reporting</span>
-        <span>Not financial advice. For learning and information only.</span>
-        <a href="#top">Back to the top ↑</a>
+      <div className="footer-bottom">
+        <p className="ledger-label">Illustrative content · no live reporting</p>
+        <p className="footer-advice">Not financial advice. For learning and information only.</p>
+        <a className="ledger-label" href="#top">Back to the top ↑</a>
       </div>
     </footer>
   );

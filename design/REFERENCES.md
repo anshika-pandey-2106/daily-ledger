@@ -29,4 +29,10 @@ User-selected visual references. They are inspiration only. Do not copy any webs
 ## Combined direction
 Clean, spacious editorial layout; vintage paper character and strong serif typography; a prominent masthead; engaging story cards with selective pops of colour; clear titles and short decks.
 
+## Approved digital colour direction
+The temporary study at `/mockup/visual-direction` is the approved palette reference for the current implementation. Keep the existing cream paper, near-black ink, neutral rules, masthead, serif typography and broadsheet grid. Use deep editorial navy (`#19334D`) as the main structural accent, signature raspberry (`#E30B5D`) as a selective highlight, and butter (`#F2D77B`) for occasional warmth. Cream stays dominant; raspberry must not become a large page background. Prefer muted supporting tints for story fields and annotations, and use dark raspberry ink for small text. The study is a colour and component reference, not a template to copy; the authoritative values and semantic roles are in `design/tokens.css`.
+
+## Approved typography direction
+The reviewed comparison at `/mockup/typography` establishes the active type hierarchy: UnifrakturCook for the masthead; Fraunces for main and section headlines; Special Elite for complete long-form article bodies; Literata for summaries, descriptions, margin notes, captions, source notes and footer copy; and DM Sans for navigation and metadata. Keep Special Elite at a comfortable reading size with generous leading. The comparison page may show alternate pairings, but active site pages use this approved hierarchy.
+
 The PRD and `AGENTS.md` are authoritative for product and engineering decisions. `DESIGN_BRIEF.md` and `tokens.css` are authoritative for the final design constraints. This file records visual preferences only.

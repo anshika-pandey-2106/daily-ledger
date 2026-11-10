@@ -2,6 +2,7 @@
   width: min(calc(100% - var(--page-gutter) * 2), var(--content-max));
   margin-inline: auto;
   padding-block: var(--space-6) var(--space-8);
+  font-family: var(--font-support);
 }
 
 .masthead {
@@ -16,7 +17,7 @@
 
 .masthead-deck {
   margin: 0;
-  font: var(--text-lg) / var(--leading-body) var(--font-display);
+  font: var(--text-lg) / var(--leading-body) var(--font-support);
 }
 
 .edition-bar {
@@ -96,7 +97,7 @@ code {
 }
 
 .paper-surface:last-child { border-right: 0; }
-.paper-surface span, .specimen-note { color: var(--ink-soft); font-size: var(--text-sm); }
+.paper-surface span, .specimen-note { color: var(--ink-soft); font: var(--text-sm) / var(--leading-body) var(--font-support); }
 
 .type-grid {
   display: grid;
@@ -115,8 +116,9 @@ code {
 .type-specimen .ledger-label { margin-bottom: var(--space-3); }
 .font-sample { margin-bottom: var(--space-3) !important; color: var(--ink); }
 .sample-unifrakturkook { font: 700 var(--text-2xl) / 1.2 var(--font-masthead); }
-.sample-playfair-display { font: 700 var(--text-2xl) / 1.2 var(--font-display); letter-spacing: var(--tracking-display); }
-.sample-source-serif-4 { font: var(--text-lg) / var(--leading-body) var(--font-body); }
+.sample-fraunces { font: 700 var(--text-2xl) / 1.2 var(--font-display); letter-spacing: var(--tracking-display); }
+.sample-special-elite { font: var(--text-reading) / var(--leading-reading) var(--font-body); }
+.sample-literata { font: var(--text-lg) / var(--leading-body) var(--font-support); }
 .sample-dm-sans { font: 600 var(--text-sm) / 1.4 var(--font-label); letter-spacing: var(--tracking-label); }
 
 .scale-row {

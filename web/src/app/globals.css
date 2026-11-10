@@ -10,6 +10,35 @@
   --color-ink-soft: var(--ink-soft);
   --color-rule: var(--rule);
   --color-rule-light: var(--rule-light);
+  --color-editorial-navy: var(--editorial-navy);
+  --color-raspberry: var(--raspberry);
+  --color-raspberry-ink: var(--raspberry-ink);
+  --color-butter: var(--butter);
+  --color-navy-wash: var(--navy-wash);
+  --color-raspberry-wash: var(--raspberry-wash);
+  --color-butter-wash: var(--butter-wash);
+  --color-background-page: var(--background-page);
+  --color-background-surface: var(--background-surface);
+  --color-background-muted: var(--background-muted);
+  --color-background-editorial: var(--background-editorial);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-inverse: var(--text-inverse);
+  --color-text-accent: var(--text-accent);
+  --color-text-display-accent: var(--text-display-accent);
+  --color-accent-structural: var(--accent-structural);
+  --color-accent-signature: var(--accent-signature);
+  --color-accent-warm: var(--accent-warm);
+  --color-highlight-background: var(--highlight-background);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-border-structural: var(--border-structural);
+  --color-surface-navy: var(--surface-navy);
+  --color-surface-navy-muted: var(--surface-navy-muted);
+  --color-surface-raspberry-muted: var(--surface-raspberry-muted);
+  --color-surface-butter: var(--surface-butter);
+  --color-surface-butter-muted: var(--surface-butter-muted);
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-accent-light: var(--accent-light);
@@ -31,6 +60,7 @@
   --font-ledger-masthead: var(--font-masthead);
   --font-ledger-display: var(--font-display);
   --font-ledger-body: var(--font-body);
+  --font-ledger-support: var(--font-support);
   --font-ledger-label: var(--font-label);
 }
 
@@ -46,6 +76,7 @@ body {
   --font-masthead: var(--loaded-font-masthead), "Old English Text MT", serif;
   --font-display: var(--loaded-font-display), Georgia, serif;
   --font-body: var(--loaded-font-body), Georgia, serif;
+  --font-support: var(--loaded-font-support), Georgia, serif;
   --font-label: var(--loaded-font-label), Arial, sans-serif;
   margin: 0;
   background: var(--paper);
