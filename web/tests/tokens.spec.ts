@@ -17,6 +17,4 @@ test("token showcase renders its design system sections", async ({ page }, testI
     expect(hasHorizontalOverflow).toBe(false);
   }
 
-  const screenshotPath = `../design/screenshots/tokens-${testInfo.project.name}.png`;
-  await page.screenshot({ path: screenshotPath, fullPage: true });
 });

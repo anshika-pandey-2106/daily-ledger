@@ -31,8 +31,11 @@ const labelFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Design tokens | The Daily Ledger",
-  description: "A visual reference for The Daily Ledger design system tokens.",
+  title: {
+    default: "The Daily Ledger",
+    template: "%s | The Daily Ledger",
+  },
+  description: "Markets and money, made legible.",
 };
 
 export default function RootLayout({

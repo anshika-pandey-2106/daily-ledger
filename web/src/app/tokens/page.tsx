@@ -1,4 +1,10 @@
 import "./tokens.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Design tokens",
+  description: "A visual reference for The Daily Ledger design system tokens.",
+};
 
 const colourTokens = [
   ["--paper", "Paper"],

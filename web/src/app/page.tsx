@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { FrontPage } from "../../components/paper";
+import "../../components/paper/front-page.css";
 
-export default function Home() {
-  redirect("/tokens");
+export const metadata: Metadata = {
+  title: "The Daily Ledger",
+  description: "A static, illustrative front page for The Daily Ledger.",
+};
+
+export default function HomePage() {
+  return <FrontPage />;
 }

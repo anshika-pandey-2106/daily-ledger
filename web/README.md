@@ -29,13 +29,13 @@ npm test
 npm run screenshots
 ```
 
-The Playwright smoke test runs the showcase at desktop and mobile sizes and writes full-page captures into `design/screenshots/`. The test runner starts the development server itself, so no separate server terminal is needed for these commands.
+The Playwright smoke tests check both `/` and `/tokens` at desktop and mobile sizes. The homepage test writes `front-page-desktop.png` and `front-page-mobile.png` into `design/screenshots/`; the original token showcase captures remain untouched. The test runner reuses the development server at `http://localhost:3000` when it is already running.
 
 ## Structure
 
 - `src/app/layout.tsx` loads the four Google font families once with `next/font/local` and provides shared page metadata. The font files and their SIL Open Font License texts are included so builds do not depend on a connection to Google Fonts.
 - `src/app/globals.css` imports Tailwind and the repository design tokens, then maps token values into named Tailwind colour, font and spacing utilities.
 - `src/app/tokens/` contains the static token showcase and its responsive styles.
-- `tests/` contains a browser-level smoke test; `playwright.config.ts` defines the review viewports.
+- `tests/` contains browser-level smoke tests; `playwright.config.ts` defines the review viewports.
 
 This foundation intentionally contains no product data, API routes, authentication or article UI.

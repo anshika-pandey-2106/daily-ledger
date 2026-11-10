@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const port = 3100;
+const port = 3000;
 
 export default defineConfig({
   testDir: "./tests",
@@ -26,8 +26,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev -- --hostname 127.0.0.1 --port 3100",
-    url: `http://127.0.0.1:${port}/tokens`,
+    command: "npm run dev",
+    url: `http://127.0.0.1:${port}/`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

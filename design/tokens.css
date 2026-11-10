@@ -4,19 +4,19 @@
    Load the Google Fonts in the app's font-loading layer (next/font).
 
    Contrast (measured, WCAG):
-   - ink on paper 9.0:1, ink-soft on paper 4.9:1
-   - accent-text on paper 5.1:1
-   - accent (#b93c11) on paper is only 3.0:1: use it for fills, badges and large type, never small text
-   - paper-bright on accent 4.9:1, on card-forest 6.7:1, on card-charcoal 11:1
-   - paper-bright on card-blue-deep is 3.7:1: large text only
+   - ink on paper 15.0:1, ink-soft on paper 8.2:1
+   - accent-text on paper 8.5:1
+   - accent (#b93c11) on paper is 5.0:1: use it for fills, badges and large type
+   - paper-bright on accent 5.3:1, on card-forest 7.2:1, on card-charcoal 13.7:1
+   - paper-bright on card-blue-deep is 4.0:1: large text only
    - ink on card-blue, card-mustard and card-sage is 8:1 or better
 */
 :root {
   /* Paper and ink */
-  --paper: #c3bbb2;
-  --paper-light: #e6dfd2;
-  --paper-bright: #f4efe4;
-  --paper-deep: #b3aba1;
+  --paper: #f3f0e8;
+  --paper-light: #eae5dc;
+  --paper-bright: #fbf8f1;
+  --paper-deep: #e0d9ce;
   --ink: #1c1c19;
   --ink-soft: #4a4640;
   --rule: #706c66;
