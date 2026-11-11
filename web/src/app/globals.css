@@ -75,7 +75,7 @@ html {
 body {
   --font-masthead: var(--loaded-font-masthead), "Old English Text MT", serif;
   --font-display: var(--loaded-font-display), Georgia, serif;
-  --font-body: var(--loaded-font-body), Georgia, serif;
+  --font-body: var(--loaded-font-body), "Courier New", monospace;
   --font-support: var(--loaded-font-support), Georgia, serif;
   --font-label: var(--loaded-font-label), Arial, sans-serif;
   margin: 0;
